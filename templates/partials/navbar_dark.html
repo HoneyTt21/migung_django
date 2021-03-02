@@ -1,0 +1,65 @@
+{% comment %} if any modification is made, please repeat it on navbar_bright.html! {% endcomment %}
+
+{%load static%}
+
+<header>
+    <nav class="container" id="menu">
+        <div class="logo">
+            <a href="{% url "core:home" %}">
+                <img id="logo_img" src="{% static "img/logo_dark.png" %}">
+            </a>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="{% url "core:home" %}">
+                    <img src="{% static "img/navbar/main_dark.png" %}">
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url "core:announcement" %}">
+                    <img src="{% static "img/navbar/announcement_dark.png" %}">
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url "core:howto" %}">
+                    <img src="{% static "img/navbar/howto_dark.png" %}">
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url "users:history" %}">
+                    <img src="{% static "img/navbar/history_dark.png" %}">
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url "core:creators" %}">
+                    <img src="{% static "img/navbar/creators_dark.png" %}">
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url "core:ranking" %}">
+                    <img src="{% static "img/navbar/ranking_dark.png" %}">
+                </a>
+            </li>
+
+            {%if user.is_authenticated%}
+                <li class="nav-link"><a href="{% url "users:login" %}"><img src="{% static "img/navbar/login_dark.png" %}"></a></li>
+            {%else%}
+                <li class="nav-link"><a href="{% url "users:logout" %}"><img src="{% static "img/navbar/logout_dark.png" %}"></a></li>
+            {%endif%}
+
+            <li>
+                <a href="{% url "core:home" %}">
+                    <img src="{% static "img/navbar/main.png" %}">
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</header>

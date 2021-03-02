@@ -1,50 +1,10 @@
-<?php
-$suffix = '';
-if (isset($_SESSION['dark'])) {
-	$suffix = '_dark';
-}
-?>
 
-<header>
-	<div>
-		<nav class="container" id="menu">
-			<div class="logo">
-				<a href="/present/main.php">
-					<img id="logo_img" src="/present/logo<?php echo $suffix; ?>.png">
-				</a>
-			</div>
-			<ul>
-				<li><a href="/present/main.php">
-					<img src="/present/menubar/mainpage<?php echo $suffix; ?>.png">
-				</a></li>
-				<li><a href="/present/announcement.php">
-					<img src="/present/menubar/notice<?php echo $suffix; ?>.png">
-				</a></li>
-				<li><a href="/present/howto.php">
-					<img src="/present/menubar/howto<?php echo $suffix; ?>.png">
-				</a></li>
-				<li><a href="/present/history.php">
-					<img src="/present/menubar/history<?php echo $suffix; ?>.png">
-				</a></li>
-				<li><a href="/present/creators.php">
-					<img src="/present/menubar/producer<?php echo $suffix; ?>.png">
-				</a></li>
-				<li><a href="/present/ranking.php">
-					<img src="/present/menubar/hof<?php echo $suffix; ?>.png">
-				</a></li>
-				<?php if (!isset($_SESSION['id'])): ?>
-					<li><a href="/present/login.php">
-						<img src="/present/menubar/login<?php echo $suffix; ?>.png">
-					</a></li>
-				<?php else: ?>
-					<li><a onclick="return confirm('로그아웃 하시겠습니까?');" href="/present/logout.php">
-						<img src="/present/menubar/logout<?php echo $suffix; ?>.png">
-					</a></li>
-				<?php endif; ?>
-			</ul>
-		</nav>
-	</div>
-</header>
+{%if dark%}
+    {%include "partials/navbar_dark.html"%}
+{%else%}
+    {%include "partials/navbar_bright.html"%}
+{%endif%}
+
 <div>
 	<p style="color:red; font-weight: bold; text-align: center;"><공지> 공개적인 장소에서 문제 및 풀이법 유출을 삼가주시기 바랍니다.</p>
 </div>

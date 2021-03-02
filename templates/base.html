@@ -1,0 +1,21 @@
+
+{%include "partials/header.html"%}
+{%include "partials/navbar.html"%}
+
+{%load static%}
+
+{%if dark%}
+    <link rel="stylesheet" type="text/css" href="{% static "css/style_dark.css" %}">
+{%endif%}
+
+</head>
+
+<body>
+<div class="content">
+
+    {%block content%}
+    {%endblock%}
+
+</div>
+
+{%include "partials/footer.html"%}
